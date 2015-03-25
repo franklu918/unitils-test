@@ -9,21 +9,21 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 public class MockAnnotationTest {
-	//����ע��ģ����
+    //基于注释模拟类
     @Mock User mockUser;
-    
-    @Before 
+
+    @Before
     public void initMocks() {
-    	//��ʼ����ǰ����������@Mockע��ģ�����
+        //初始化当前测试类所有@Mock注释模拟对象
         MockitoAnnotations.initMocks(this);
     }
 
-	//ģ��User�����
-	@Test
-	public void testMockUser() {
-		when(mockUser.getUserId()).thenReturn(1);
-		when(mockUser.getUserName()).thenReturn("tom");
-		assertEquals(mockUser.getUserId(),1);
-		assertEquals(mockUser.getUserName(), "tom");
-	}
+    //模拟User类测试
+    @Test
+    public void testMockUser() {
+        when(mockUser.getUserId()).thenReturn(1);
+        when(mockUser.getUserName()).thenReturn("tom");
+        assertEquals(mockUser.getUserId(),1);
+        assertEquals(mockUser.getUserName(), "tom");
+    }
 }

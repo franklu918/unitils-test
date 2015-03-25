@@ -7,19 +7,19 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import com.baobaotao.domain.User;
 
-//��ʱ���� 
+//超时测试 
 public class Junit4TimeoutTest {
-	private User user;
-	
-    @Before 
-    public void init() { 
-    	user = new User("tom","1234");
-    } 
-	
-	//������ָ��ָ��ʱ���ھ���ȷ
-	@Test(timeout = 10)
-	public void testUser(){
+    private User user;
+
+    @Before
+    public void init() {
+        user = new User("tom","1234");
+    }
+
+    //测试是指在指定时间内就正确
+    @Test(timeout = 10)
+    public void testUser(){
         assertNotNull(user);
         assertEquals("tom", user.getUserName());
-	}
+    }
 }
