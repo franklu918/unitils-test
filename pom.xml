@@ -296,17 +296,21 @@
 	</dependencies>
 
 	<build>
-		<finalName>unitils-test-test</finalName>
-		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>test</testSourceDirectory>
-		<resources>
-			<resource>
-				<!-- TODO 可以去掉不？ -->
-				<directory>resources</directory>
-			</resource>
-		</resources>
+        <!-- 默认源代码和资源文件目录配置 -->
+        <sourceDirectory>src/main/java </sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
 
-		<plugins>
+        <plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
